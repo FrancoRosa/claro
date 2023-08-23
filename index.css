@@ -1,0 +1,39 @@
+body {
+  font-family: monospace;
+  font-size: 1.5em;
+  background-color: black;
+  color: lime;
+}
+
+.flex {
+  display: flex;
+}
+
+input {
+  width: 4em;
+  font-size: 1em;
+  text-align: right;
+  border-color: lime;
+  background-color: black;
+  color: lime;
+  font-family: monospace;
+  margin-top: 0.5em;
+}
+
+.ml-1 {
+  margin-left: 1em;
+}
+
+.separator {
+  border-bottom: solid 1px darkgreen;
+  width: 100%;
+  margin-top: 2em;
+}
+
+.centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
