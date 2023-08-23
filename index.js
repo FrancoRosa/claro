@@ -16,17 +16,17 @@ const getResults = (us, ds, da) => {
   o_ds.innerText = ods.toFixed(2);
 };
 
-i_ds.addEventListener("change", () => {
+i_ds.addEventListener("input", () => {
   ds = parseFloat(i_ds.value);
   getResults(us, ds, da);
 });
 
-i_us.addEventListener("change", () => {
+i_us.addEventListener("input", () => {
   us = parseFloat(i_us.value);
   getResults(us, ds, da);
 });
 
-i_da.addEventListener("change", () => {
+i_da.addEventListener("input", () => {
   da = parseFloat(i_da.value);
   getResults(us, ds, da);
 });
