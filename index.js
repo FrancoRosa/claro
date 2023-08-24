@@ -21,6 +21,22 @@ const getResults = (us, ds, da) => {
   else o_ds.classList.remove("bad");
 };
 
+const getUserAgent = () => {
+  const nav = navigator.userAgent;
+  const email = document.getElementById("email");
+  const mobile =
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(nav);
+
+  email.setAttribute(
+    "href",
+    mobile
+      ? "mailto:javier.aparicio@claro.com.pe?subject=Calculo%20de%20perdidas&body=Hola%20Javier"
+      : "https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=javier.aparicio@claro.com.pe&su=Calculo%20de%20perdidas&body=Hola%20Javier"
+  );
+};
+
+getUserAgent();
+
 i_ds.addEventListener("input", () => {
   ds = parseFloat(i_ds.value);
   getResults(us, ds, da);
