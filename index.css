@@ -25,7 +25,7 @@ input {
 }
 
 .separator {
-  border-bottom: solid 1px darkgreen;
+  border-bottom: solid 1px darkcyan;
   width: 100%;
   margin-top: 2em;
 }
@@ -42,4 +42,19 @@ img {
   width: 150px;
   height: 150px;
   margin: 1em;
+}
+
+p {
+  font-size: 1.25em;
+  margin: 0.5em;
+}
+
+.bad {
+  color: red;
+}
+
+.credits {
+  color: cyan;
+  margin-top: 2em;
+  font-size: 1em;
 }

@@ -14,6 +14,11 @@ const getResults = (us, ds, da) => {
   const ods = ds <= 25 ? ds - da * 0.16 : 0;
   o_us.innerText = ous.toFixed(2);
   o_ds.innerText = ods.toFixed(2);
+  if (ous >= 50) o_us.classList.add("bad");
+  else o_us.classList.remove("bad");
+
+  if (ods <= -4) o_ds.classList.add("bad");
+  else o_ds.classList.remove("bad");
 };
 
 i_ds.addEventListener("input", () => {
