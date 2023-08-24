@@ -36,6 +36,7 @@ input {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  padding: 1em;
 }
 
 img {
@@ -61,7 +62,7 @@ p {
 
 .brand {
   color: white;
-  font-size: 1.25em;
+  font-size: 0.8em;
   margin-top: 0;
   margin-bottom: 1.5em;
 }
