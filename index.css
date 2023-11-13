@@ -9,7 +9,7 @@ body {
   display: flex;
 }
 
-input {
+input, select, button {
   width: 4em;
   font-size: 1em;
   text-align: right;
@@ -20,6 +20,20 @@ input {
   margin-top: 0.5em;
 }
 
+select{
+  width: 14em;
+  height: 1.5em;
+}
+
+option {
+  margin: 1em auto;
+}
+
+button {
+  width: auto;
+  padding: 0.25em 1em;
+  margin-top: 1em;
+}
 .ml-1 {
   margin-left: 1em;
 }
