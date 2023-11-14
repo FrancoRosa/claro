@@ -5,6 +5,7 @@ const i_da = document.getElementById("i_da");
 const o_ds = document.getElementById("o_ds");
 const o_us = document.getElementById("o_us");
 const calc = document.getElementById("calc");
+const splt = document.getElementById("splt");
 const slc = document.getElementById("company");
 
 const options = [
@@ -30,13 +31,17 @@ options.forEach((optionText) => {
 let ds = parseFloat(i_ds.value);
 let us = parseFloat(i_us.value);
 let da = parseFloat(i_da.value);
+let sp = 0;
 
 let ous;
 let ods;
 
+
 const getResults = (us, ds, da) => {
   ous = us >= 20 ? us + da * 0.05 : 0;
   ods = ds <= 25 ? ds - da * 0.16 : 0;
+  ous = ous + 3.5 * sp
+  ods = ods - 3.5 * sp
   o_us.innerText = ous.toFixed(2);
   o_ds.innerText = ods.toFixed(2);
   if (ous >= 50) o_us.classList.add("bad");
@@ -56,6 +61,7 @@ const sendResults = async () => {
         "entry.1773134115": da,
         "entry.571625077": ous.toFixed(2),
         "entry.639341194": ods.toFixed(2),
+        "entry.579270890": sp,
         "entry.1202637179": company,
       }),
       {
@@ -92,6 +98,14 @@ calc.addEventListener("click", () => {
 });
 
 slc.addEventListener("change", () => {
+  company = slc.value
+  console.log(company)
+});
+
+splt.addEventListener("click", () => {
+  sp++;
+  if (sp > 3) sp = 0;
+  splt.innerText = `Splitters ${sp}`;
   company = slc.value
   console.log(company)
 });
