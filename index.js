@@ -9,6 +9,7 @@ const splt = document.getElementById("splt");
 const slc = document.getElementById("company");
 
 const options = [
+  "Claro Peru",
   "Cicsa Perú Sac",
   "Cobertura Total",
   "Comunicaciones Sur Peruana",
