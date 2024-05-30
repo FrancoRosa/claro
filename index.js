@@ -12,6 +12,18 @@ const drop = document.getElementById("drop");
 const ftth_ont = document.getElementById("ftth_ont");
 const ftth_optic = document.getElementById("ftth_optic");
 
+let latitude = 0;
+let longitude = 0;
+
+if ("geolocation" in navigator) {
+  navigator.geolocation.getCurrentPosition((position) => {
+    latitude = position.coords.latitude;
+    longitude = position.coords.longitude;
+  });
+} else {
+  /* geolocation IS NOT available */
+}
+
 const options = [
   "Claro Peru",
   "Cicsa Perú Sac",
@@ -23,7 +35,7 @@ const options = [
   "Telecomunicaciones Megatic",
   "Xtend",
   "Web Solution",
-  "Fibercom"
+  "Fibercom",
 ];
 let company = options[0];
 
@@ -73,6 +85,30 @@ const sendResults = async () => {
         mode: "no-cors",
       }
     );
+  } catch (e) {
+    console.log(e.message);
+  }
+};
+
+const sendResultsFTTH = async () => {
+  console.log("...sending ftth");
+  try {
+    await fetch(
+      "https://docs.google.com/forms/d/e/1FAIpQLSfncpVPWvfvp30raOmTQ97lgF3mmTGuHvPLTZ0JV8cWhv7ccw/formResponse?" +
+        new URLSearchParams({
+          "entry.1293228006": ffth_rx.value,
+          "entry.813637407": drop.value,
+          "entry.571625077": ftth_optic.innerHTML,
+          "entry.639341194": ftth_ont.innerHTML,
+          "entry.1202637179": company,
+          "entry.870382746": latitude,
+          "entry.179225676": longitude,
+        }),
+      {
+        mode: "no-cors",
+      }
+    );
+    console.log("...done ftth");
   } catch (e) {
     console.log(e.message);
   }
@@ -150,5 +186,5 @@ calc_ffth.addEventListener("click", () => {
   else ftth_ont.classList.remove("bad");
   if (optic <= -25) ftth_optic.classList.add("bad");
   else ftth_optic.classList.remove("bad");
-
+  sendResultsFTTH();
 });
