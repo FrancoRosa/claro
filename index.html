@@ -34,8 +34,37 @@
       <p>US [dBmV]: <span id="o_us" class="ml-1"></span></p>
       <p>DS [dBmV]: <span id="o_ds" class="ml-1"></span></p>
       <div class="separator"></div>
+
+      <div class="separator"></div>
+      <div class="separator"></div>
+      <h3>Niveles de recepción de potencia óptica.</h3>
+      <h2>Niveles FTTH - FAT</h2>
+      <label>Rx [dBm]</label>
+      <input type="number" placeholder="-20.00" id="ffth_rx" value="-20.00" step="0.01" style="width: 5em" />
+      <br />
+      
+      <label>Acometida optica (drop)</label>
+      <select id="drop">
+        <option value="50">Drop 50m</option>
+        <option value="80">Drop 80m</option>
+        <option value="100">Drop 100m</option>
+        <option value="150">Drop 150m</option>
+        <option value="220">Drop 220m</option>
+      </select>
+      
+      
+
+      <button id="calc_ffth">Calcular</button>
+      <div class="separator"></div>
+      <h2>Niveles FTTH - Conector Optico</h2>
+      <p>Rx [dBm]: <span id="ftth_optic" class="ml-1"></span></p>
+      <h2>Niveles FTTH - ONT</h2>
+      <p>Rx [dBm]: <span id="ftth_ont" class="ml-1"></span></p>
+      <div class="separator"></div>
+
+
       <a href="" target="_blank" class="credits" id="email">
-        Javier Aparicio
+        Javier Aparicio 
       </a>
     </div>
   </body>
