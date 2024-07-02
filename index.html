@@ -12,10 +12,14 @@
       <img src="claro.svg.png" loading="lazy" />
       <p class="brand">América Móvil Peru SAC - Cusco</p>
       <label>Contratista Claro</label>
-      <select id="company">
-      </select>
-      <br/>
+      <select id="company"></select>
+      <br />
       <h2>Niveles HFC-TAP</h2>
+      <p class="bad md breath" style="margin-bottom: 1em; margin-top: -1em">
+        Rango de niveles optimos RF <br />
+        40 dBmV < US < 50 dBmV<br />
+        -4 dBmV < DS < 18 dBmV
+      </p>
       <label>US [dBmV]</label>
       <input type="number" placeholder="41" id="i_us" value="41" />
       <br />
@@ -24,15 +28,16 @@
       <br />
       <label>Distancia de acometida [m]</label>
       <input type="number" placeholder="95" id="i_da" value="95" />
-      <br/>
+      <br />
       <button id="splt">Splitter 0</button>
-      <br/>
+      <br />
 
       <button id="calc">Calcular</button>
       <div class="separator"></div>
       <h2>Niveles EMTA</h2>
       <p>US [dBmV]: <span id="o_us" class="ml-1"></span></p>
       <p>DS [dBmV]: <span id="o_ds" class="ml-1"></span></p>
+
       <div class="separator"></div>
 
       <div class="separator"></div>
@@ -40,9 +45,16 @@
       <h3>Niveles de recepción de potencia óptica.</h3>
       <h2>Niveles FTTH - FAT</h2>
       <label>Rx [dBm]</label>
-      <input type="number" placeholder="-20.00" id="ffth_rx" value="-20.00" step="0.01" style="width: 5em" />
+      <input
+        type="number"
+        placeholder="-20.00"
+        id="ffth_rx"
+        value="-20.00"
+        step="0.01"
+        style="width: 5em"
+      />
       <br />
-      
+
       <label>Acometida optica (drop)</label>
       <select id="drop">
         <option value="50">Drop 50m</option>
@@ -50,9 +62,8 @@
         <option value="100">Drop 100m</option>
         <option value="150">Drop 150m</option>
         <option value="220">Drop 220m</option>
+        <option value="300">Drop 300m</option>
       </select>
-      
-      
 
       <button id="calc_ffth">Calcular</button>
       <div class="separator"></div>
@@ -60,11 +71,14 @@
       <p>Rx [dBm]: <span id="ftth_optic" class="ml-1"></span></p>
       <h2>Niveles FTTH - ONT</h2>
       <p>Rx [dBm]: <span id="ftth_ont" class="ml-1"></span></p>
+      <p class="bad breath md">
+        * Los niveles en la ONT no deben estar por encima de 1.5dB de la
+        referencia tomada en los niveles del FAT
+      </p>
       <div class="separator"></div>
 
-
       <a href="" target="_blank" class="credits" id="email">
-        Javier Aparicio 
+        Javier Aparicio
       </a>
     </div>
   </body>

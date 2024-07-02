@@ -9,7 +9,9 @@ body {
   display: flex;
 }
 
-input, select, button {
+input,
+select,
+button {
   width: 4em;
   font-size: 1em;
   text-align: right;
@@ -20,7 +22,7 @@ input, select, button {
   margin-top: 0.5em;
 }
 
-select{
+select {
   width: auto;
   height: 2em;
   border-color: darkgreen darkgreen lime darkgreen;
@@ -83,3 +85,44 @@ p {
   margin-top: 0;
   margin-bottom: 1.5em;
 }
+
+.none {
+  display: none;
+}
+
+@keyframes blink {
+  0%,
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.blink {
+  animation: blink 0.5s step-start infinite;
+}
+
+@keyframes breath {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.05);
+  }
+}
+
+.breath {
+  animation: breath 3s infinite ease-in-out;
+  text-align: center;
+}
+
+.md {
+  font-size: 1em;
+}
+
+

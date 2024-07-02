@@ -6,6 +6,7 @@ const o_us = document.getElementById("o_us");
 const calc = document.getElementById("calc");
 const splt = document.getElementById("splt");
 const slc = document.getElementById("company");
+const msg_ont = document.getElementById("msg_ont");
 
 const calc_ffth = document.getElementById("calc_ffth");
 const drop = document.getElementById("drop");
@@ -36,6 +37,7 @@ const options = [
   "Xtend",
   "Web Solution",
   "Fibercom",
+  "Red Bussines",
 ];
 let company = options[0];
 
@@ -157,24 +159,28 @@ calc_ffth.addEventListener("click", () => {
   let optic;
   switch (drop.value) {
     case "50":
-      optic = rx - 0.216;
-      ont = rx - 0.216 - 0.5;
+      optic = rx - 0.1;
+      ont = rx - 0.1 - 0.5;
       break;
     case "80":
-      optic = rx - 0.346;
-      ont = rx - 0.346 - 0.5;
+      optic = rx - 0.16;
+      ont = rx - 0.16 - 0.5;
       break;
     case "100":
-      optic = rx - 0.433;
-      ont = rx - 0.433 - 0.5;
+      optic = rx - 0.2;
+      ont = rx - 0.2 - 0.5;
       break;
     case "150":
-      optic = rx - 0.65;
-      ont = rx - 0.65 - 0.5;
+      optic = rx - 0.3;
+      ont = rx - 0.3 - 0.5;
       break;
     case "220":
-      optic = rx - 0.953;
-      ont = rx - 0.953 - 0.5;
+      optic = rx - 0.44;
+      ont = rx - 0.44 - 0.5;
+      break;
+    case "300":
+      optic = rx - 0.6;
+      ont = rx - 0.6 - 0.5;
       break;
     default:
       break;
@@ -182,6 +188,7 @@ calc_ffth.addEventListener("click", () => {
 
   ftth_optic.innerText = optic.toFixed(3);
   ftth_ont.innerText = ont.toFixed(3);
+
   if (ont <= -25) ftth_ont.classList.add("bad");
   else ftth_ont.classList.remove("bad");
   if (optic <= -25) ftth_optic.classList.add("bad");
